@@ -58,7 +58,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       <div className="flex-1 flex items-center justify-center">
         <h1
           key={wordIndex}
-          className="font-display italic text-5xl md:text-7xl lg:text-8xl text-text-primary animate-fade-in"
+          className="font-display text-5xl md:text-7xl lg:text-8xl text-text-primary animate-fade-in"
         >
           {words[wordIndex]}
         </h1>

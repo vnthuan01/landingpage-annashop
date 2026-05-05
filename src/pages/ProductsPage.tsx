@@ -19,7 +19,7 @@ export default function ProductsPage({
     <div style={{ minHeight: "100vh", backgroundColor: "var(--color-bg)", paddingTop: "9rem", paddingBottom: "7rem" }}>
       <div className="container-main">
         {/* Breadcrumb */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", fontSize: "1rem", color: "var(--color-muted)", marginBottom: "2.5rem" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", fontSize: "1rem", color: "var(--color-muted)", marginBottom: "4rem" }}>
           <Link to="/" className="hover:text-text-primary transition-colors">
             Trang chủ
           </Link>
@@ -32,13 +32,13 @@ export default function ProductsPage({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          style={{ marginBottom: "2rem", textAlign: "center", gap: "1rem", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}
+          style={{ marginBottom: "4rem", textAlign: "center", gap: "1rem", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}
         >
-          <p style={{ fontSize: "0.75rem", letterSpacing: "0.4em", color: "var(--color-accent)", textTransform: "uppercase", fontWeight: 300 }}>
-            BỘ SƯU TẬP 2026
+          <p style={{ fontSize: "0.875rem", letterSpacing: "0.1em", color: "var(--color-accent)", fontWeight: 400 }}>
+            Bộ sưu tập 2026
           </p>
-          <h1 className="font-display italic text-4xl md:text-6xl text-text-primary">
-            Kính mắt mèo ANNA
+          <h1 className="font-display text-4xl md:text-6xl text-text-primary">
+            Kính mắt mèo Anna
           </h1>
           <p className="text-muted text-base md:text-lg font-light mx-auto leading-relaxed">
             Một dòng sản phẩm duy nhất — 10 thiết kế độc đáo dành cho phong cách riêng của bạn

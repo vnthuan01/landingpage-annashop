@@ -56,13 +56,13 @@ export default function ProductSection({
       style={{ backgroundColor: "var(--color-bg)" }}
     >
       {/* Header */}
-      <div style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 10, paddingTop: "7rem", paddingBottom: "1rem", background: "linear-gradient(to bottom, var(--color-bg) 0%, var(--color-bg) 60%, transparent 100%)" }}>
+      <div style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 10, paddingTop: "7rem", paddingBottom: "1rem", background: "linear-gradient(to bottom, var(--color-bg) 0%, var(--color-bg) 60%, transparent 100%)", pointerEvents: "none" }}>
         <div style={{ padding: "0 2rem", marginBottom: "3.5rem" }}>
-          <p style={{ fontSize: "0.875rem", letterSpacing: "0.4em", color: "var(--color-accent)", marginBottom: "0.75rem", textTransform: "uppercase", fontWeight: 300 }}>
-            CHI TIẾT SẢN PHẨM
+          <p style={{ fontSize: "0.875rem", letterSpacing: "0.1em", color: "var(--color-accent)", marginBottom: "0.75rem", fontWeight: 400 }}>
+            Bộ sưu tập mới
           </p>
-          <h2 className="font-display" style={{ fontStyle: "italic", fontSize: "clamp(2rem, 5vw, 3.75rem)", color: "var(--color-text-primary)" }}>
-            Kính mắt mèo ANNA
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.75rem)", color: "var(--color-text-primary)" }}>
+            Kính mắt mèo Anna
           </h2>
           <p style={{ color: "var(--color-muted)", fontSize: "1rem", marginTop: "0.75rem", fontWeight: 300 }}>
             Một dòng sản phẩm duy nhất — Trượt để khám phá
@@ -92,7 +92,7 @@ export default function ProductSection({
         {/* Trailing spacer */}
         <div className="flex-shrink-0 w-[320px] h-full flex items-center justify-center">
           <div className="text-center">
-            <p className="font-display italic text-3xl text-text-primary mb-4">
+            <p className="font-display text-3xl text-text-primary mb-4">
               Khám phá thêm
             </p>
             <div className="w-16 h-[1px] accent-gradient mx-auto mb-4" />
@@ -103,7 +103,7 @@ export default function ProductSection({
 
       {/* Scroll progress indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex items-center gap-3">
-        <span className="text-xs tracking-[0.2em] text-muted uppercase">
+        <span className="text-xs tracking-[0.2em] text-muted">
           Cuộn để xem
         </span>
         <svg

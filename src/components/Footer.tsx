@@ -8,8 +8,8 @@ export default function Footer() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 250px), 1fr))", gap: "4rem", marginBottom: "4rem" }}>
           {/* About ANNA */}
           <div>
-            <Link to="/" className="accent-gradient-text" style={{ fontSize: "1.5rem", letterSpacing: "0.3em", fontWeight: 300, textDecoration: "none", display: "inline-block", marginBottom: "1.5rem" }}>
-              ANNA
+            <Link to="/" className="accent-gradient-text" style={{ fontSize: "1.5rem", letterSpacing: "0.1em", fontWeight: 400, textDecoration: "none", display: "inline-block", marginBottom: "1.5rem" }}>
+              Anna Eyewear
             </Link>
             <p style={{ fontSize: "1rem", color: "var(--color-muted)", lineHeight: 1.8, fontWeight: 300, maxWidth: "320px" }}>
               Thương hiệu kính mắt thời trang dành cho giới trẻ Việt Nam. Thiết kế tối giản, chất lượng cao cấp, giá cả hợp lý — mỗi chiếc kính là một tuyên ngôn phong cách.
@@ -18,7 +18,7 @@ export default function Footer() {
 
           {/* Khám phá */}
           <div>
-            <h3 style={{ fontSize: "0.875rem", letterSpacing: "0.15em", color: "var(--color-text-primary)", textTransform: "uppercase", fontWeight: 500, marginBottom: "1.75rem" }}>
+            <h3 style={{ fontSize: "0.875rem", letterSpacing: "0.05em", color: "var(--color-text-primary)", fontWeight: 500, marginBottom: "1.75rem" }}>
               Khám phá
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
@@ -36,7 +36,7 @@ export default function Footer() {
 
           {/* Liên hệ */}
           <div>
-            <h3 style={{ fontSize: "0.875rem", letterSpacing: "0.15em", color: "var(--color-text-primary)", textTransform: "uppercase", fontWeight: 500, marginBottom: "1.75rem" }}>
+            <h3 style={{ fontSize: "0.875rem", letterSpacing: "0.05em", color: "var(--color-text-primary)", fontWeight: 500, marginBottom: "1.75rem" }}>
               Liên hệ
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>

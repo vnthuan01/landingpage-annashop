@@ -37,7 +37,6 @@ export default function CheckoutModal({ isOpen, onClose, cart, totalPrice, onSub
     color: "var(--color-muted)",
     marginBottom: "0.75rem",
     letterSpacing: "0.1em",
-    textTransform: "uppercase",
   };
 
   return (
@@ -50,7 +49,7 @@ export default function CheckoutModal({ isOpen, onClose, cart, totalPrice, onSub
               <div className="accent-gradient" style={{ width: "5rem", height: "5rem", borderRadius: "50%", margin: "0 auto 1.5rem", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-bg)" strokeWidth="2"><path d="M20 6L9 17l-5-5" /></svg>
               </div>
-              <h3 className="font-display" style={{ fontSize: "1.75rem", fontStyle: "italic", color: "var(--color-text-primary)", marginBottom: "0.75rem" }}>Đặt hàng thành công!</h3>
+              <h3 className="font-display" style={{ fontSize: "1.75rem", color: "var(--color-text-primary)", marginBottom: "0.75rem" }}>Đặt hàng thành công!</h3>
               <p style={{ fontSize: "1rem", color: "var(--color-muted)" }}>Chúng tôi sẽ liên hệ với bạn sớm nhất.</p>
             </div>
           ) : (

@@ -44,7 +44,7 @@ export default function ContactSection() {
     <section id="contact" ref={sectionRef} className="section-spacing" style={{ backgroundColor: "var(--color-surface)", marginTop: "1rem" }}>
       <div className="container-main">
         <div className="contact-animate" style={{ textAlign: "center", marginBottom: "5rem" }}>
-          <h2 className="font-display" style={{ fontStyle: "italic", fontSize: "clamp(2rem, 5vw, 3.75rem)", color: "var(--color-text-primary)", marginBottom: "1.5rem" }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.75rem)", color: "var(--color-text-primary)", marginBottom: "1.5rem" }}>
             Liên hệ với ANNA ngay hôm nay
           </h2>
           <p style={{ color: "var(--color-muted)", fontSize: "1.125rem", fontWeight: 300, maxWidth: "36rem", margin: "0 auto" }}>
@@ -55,7 +55,7 @@ export default function ContactSection() {
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 400px), 1fr))", gap: "4rem" }}>
           <div className="contact-animate">
-            <h3 style={{ fontSize: "1.125rem", letterSpacing: "0.1em", color: "var(--color-text-primary)", marginBottom: "2.5rem", fontWeight: 500, textTransform: "uppercase" }}>
+            <h3 style={{ fontSize: "1.125rem", letterSpacing: "0.1em", color: "var(--color-text-primary)", marginBottom: "2.5rem", fontWeight: 500 }}>
               Thông tin liên hệ
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
@@ -87,7 +87,7 @@ export default function ContactSection() {
           </div>
 
           <div className="contact-animate">
-            <h3 style={{ fontSize: "1.125rem", letterSpacing: "0.1em", color: "var(--color-text-primary)", marginBottom: "2.5rem", fontWeight: 500, textTransform: "uppercase" }}>
+            <h3 style={{ fontSize: "1.125rem", letterSpacing: "0.1em", color: "var(--color-text-primary)", marginBottom: "2.5rem", fontWeight: 500 }}>
               Chính sách bảo hành
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
@@ -103,7 +103,7 @@ export default function ContactSection() {
               ))}
             </div>
             <div style={{ marginTop: "2rem", padding: "1.75rem", borderRadius: "1rem", backgroundColor: "var(--color-bg)", border: "1px solid var(--color-stroke)" }}>
-              <p style={{ fontSize: "0.875rem", color: "var(--color-muted)", marginBottom: "1rem", letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 500 }}>
+              <p style={{ fontSize: "0.875rem", color: "var(--color-muted)", marginBottom: "1rem", letterSpacing: "0.1em", fontWeight: 500 }}>
                 Không áp dụng bảo hành
               </p>
               <div style={{ display: "flex", gap: "1rem" }}>

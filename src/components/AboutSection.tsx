@@ -43,10 +43,10 @@ export default function AboutSection() {
       <div className="container-main">
         {/* Header */}
         <div className="text-center about-animate" style={{ marginBottom: "5rem" }}>
-          <p style={{ fontSize: "0.875rem", letterSpacing: "0.4em", color: "var(--color-accent)", marginBottom: "1.25rem", textTransform: "uppercase", fontWeight: 300 }}>
-            VỀ ANNA
+          <p style={{ fontSize: "0.875rem", letterSpacing: "0.1em", color: "var(--color-accent)", marginBottom: "1.25rem", fontWeight: 400 }}>
+            Về Anna Eyewear
           </p>
-          <h2 className="font-display" style={{ fontStyle: "italic", fontSize: "clamp(2rem, 5vw, 3.75rem)", color: "var(--color-text-primary)", marginBottom: "1.5rem" }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.75rem)", color: "var(--color-text-primary)", marginBottom: "1.5rem" }}>
             Câu chuyện thương hiệu
           </h2>
           <div className="accent-gradient" style={{ width: "6rem", height: "1px", margin: "0 auto" }} />

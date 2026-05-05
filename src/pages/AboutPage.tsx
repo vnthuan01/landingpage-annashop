@@ -60,10 +60,9 @@ export default function AboutPage() {
       }}
     >
       {/* FIX: center container */}
-      <div className="container-main max-w-[1200px] mx-auto px-6 lg:px-10">
-
-        {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-sm text-muted mb-12 justify-center md:justify-start">
+      {/* Breadcrumb */}
+      <div className="container-main">
+        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", fontSize: "1rem", color: "var(--color-muted)", marginBottom: "4rem" }}>
           <Link to="/" className="hover:text-text-primary transition-colors">
             Trang chủ
           </Link>
@@ -73,31 +72,25 @@ export default function AboutPage() {
 
         {/* Hero */}
         <motion.div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "2rem",
-            marginBottom: "1rem",
-          }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          style={{ marginBottom: "4rem", textAlign: "center", gap: "1.25rem", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}
         >
-          <p className="text-xs tracking-[0.4em] mb-4 uppercase font-light text-[#C6A86E]">
-            VỀ ANNA EYEWEAR
+          <p style={{ fontSize: "1rem", letterSpacing: "0.1em", color: "var(--color-accent)", fontWeight: 400 }}>
+            Về Anna Eyewear
           </p>
 
-          <h1 className="font-display italic text-4xl md:text-6xl text-text-primary mb-6">
+          <h1 className="font-display text-4xl md:text-6xl text-text-primary">
             Câu chuyện thương hiệu
           </h1>
 
-          <p className="text-center text-muted text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed">
-            ANNA là thương hiệu kính thời trang được thành lập với triết lý thiết kế tối giản,
+          <p className="text-muted text-base md:text-lg font-light mx-auto leading-relaxed max-w-2xl text-center">
+            Anna là thương hiệu kính thời trang được thành lập với triết lý thiết kế tối giản,
             giá cả hợp lý và phù hợp với phong cách của giới trẻ Việt Nam.
           </p>
 
-          <div className="w-24 h-[1px] mx-auto mt-8 bg-gradient-to-r from-[#E8D8B5] to-[#C6A86E]" />
+          <div className="accent-gradient" style={{ width: "5rem", height: "1px", margin: "1.5rem auto 0" }} />
         </motion.div>
 
         {/* Values */}
@@ -156,11 +149,11 @@ export default function AboutPage() {
             }}
           >
             <div className="max-w-[520px] mx-auto">
-              <p className="text-xs tracking-[0.4em] text-[#C6A86E] mb-4 uppercase">
-                CÂU CHUYỆN CỦA CHÚNG TÔI
+              <p className="text-xs tracking-[0.1em] text-[#C6A86E] mb-4">
+                Câu chuyện của chúng tôi
               </p>
 
-              <h2 className="font-display italic text-3xl text-text-primary mb-6">
+              <h2 className="font-display text-3xl text-text-primary mb-6">
                 Từ ý tưởng đến hiện thực
               </h2>
 
@@ -185,7 +178,7 @@ export default function AboutPage() {
 
         {/* Timeline */}
         <motion.div className="mb-28">
-          <h2 className="font-display italic text-3xl md:text-4xl text-text-primary text-center mb-14">
+          <h2 className="font-display text-3xl md:text-4xl text-text-primary text-center mb-14">
             Hành trình phát triển
           </h2>
 
@@ -215,7 +208,7 @@ export default function AboutPage() {
         {/* Features */}
         <div className="flex justify-center text-center" style={{ marginTop: "4rem" }}>
           <motion.div className="flex flex-col items-center justify-center glass rounded-2xl p-10 md:p-14 max-w-[800px] mx-auto" style={{ padding: "1rem" }}>
-            <h2 className="font-display italic text-3xl md:text-4xl text-text-primary text-center" style={{ marginBottom: "1rem" }}>
+            <h2 className="font-display text-3xl md:text-4xl text-text-primary text-center" style={{ marginBottom: "1rem" }}>
               Tại sao chọn ANNA?
             </h2>
 

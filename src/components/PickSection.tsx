@@ -9,10 +9,10 @@ export default function PickSection() {
     <section className="section-spacing" style={{ backgroundColor: "var(--color-bg)", marginTop: "1rem" }}>
       <div className="container-main">
         <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-          <p style={{ fontSize: "0.8125rem", letterSpacing: "0.4em", color: "var(--color-accent)", marginBottom: "1.25rem", textTransform: "uppercase", fontWeight: 300 }}>
-            BỘ SƯU TẬP
+          <p style={{ fontSize: "0.875rem", letterSpacing: "0.1em", color: "var(--color-accent)", marginBottom: "1.25rem", fontWeight: 400 }}>
+            Lựa chọn của chuyên gia
           </p>
-          <h2 className="font-display" style={{ fontStyle: "italic", fontSize: "clamp(1.75rem, 4vw, 3rem)", color: "var(--color-text-primary)", maxWidth: "700px", margin: "0 auto", lineHeight: 1.3 }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", color: "var(--color-text-primary)", maxWidth: "700px", margin: "0 auto", lineHeight: 1.3 }}>
             Chọn một thiết kế xứng đáng với phong cách của bạn
           </h2>
           <div className="accent-gradient" style={{ width: "6rem", height: "1px", margin: "2rem auto 0" }} />
@@ -33,8 +33,8 @@ export default function PickSection() {
                   <img src={product.image} alt={product.name} style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.7s" }} loading="lazy" />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.6), transparent)", display: "flex", alignItems: "flex-end", padding: "2rem" }}>
                     <div>
-                      <span style={{ fontSize: "0.6875rem", letterSpacing: "0.15em", color: "var(--color-accent)", textTransform: "uppercase", display: "block", marginBottom: "0.375rem" }}>{product.style}</span>
-                      <h3 className="font-display" style={{ fontSize: "1.5rem", fontStyle: "italic", color: "#FFFFFF" }}>{product.name}</h3>
+                      <span style={{ fontSize: "0.6875rem", letterSpacing: "0.15em", color: "var(--color-accent)", display: "block", marginBottom: "0.375rem" }}>{product.style}</span>
+                      <h3 className="font-display" style={{ fontSize: "1.5rem", color: "#FFFFFF" }}>{product.name}</h3>
                     </div>
                   </div>
                 </div>

@@ -74,8 +74,8 @@ function ProductDetailModal({ product, onClose, onAddToCart, isFavorite, onToggl
 
             <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: "1.5rem" }}>
               <div>
-                <p style={{ fontSize: "0.8125rem", letterSpacing: "0.2em", color: "var(--color-accent)", textTransform: "uppercase", marginBottom: "0.75rem" }}>{product.style}</p>
-                <h2 className="font-display" style={{ fontSize: "2rem", fontStyle: "italic", color: "var(--color-text-primary)" }}>{product.name}</h2>
+                <p style={{ fontSize: "0.8125rem", letterSpacing: "0.2em", color: "var(--color-accent)", marginBottom: "0.75rem" }}>{product.style}</p>
+                <h2 className="font-display" style={{ fontSize: "2rem", color: "var(--color-text-primary)" }}>{product.name}</h2>
               </div>
 
               <p className="accent-gradient-text" style={{ fontSize: "1.75rem", fontWeight: 600 }}>{formatPrice(product.price)}</p>
@@ -84,15 +84,15 @@ function ProductDetailModal({ product, onClose, onAddToCart, isFavorite, onToggl
 
               <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", padding: "1.25rem 0", borderTop: "1px solid var(--color-stroke)", borderBottom: "1px solid var(--color-stroke)" }}>
                 <div>
-                  <p style={{ fontSize: "0.75rem", color: "var(--color-muted)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.375rem" }}>Chất liệu</p>
+                  <p style={{ fontSize: "0.75rem", color: "var(--color-muted)", letterSpacing: "0.1em", marginBottom: "0.375rem" }}>Chất liệu</p>
                   <p style={{ fontSize: "0.9375rem", color: "var(--color-text-primary)" }}>{product.material}</p>
                 </div>
                 <div>
-                  <p style={{ fontSize: "0.75rem", color: "var(--color-muted)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.375rem" }}>Bảo hành</p>
+                  <p style={{ fontSize: "0.75rem", color: "var(--color-muted)", letterSpacing: "0.1em", marginBottom: "0.375rem" }}>Bảo hành</p>
                   <p style={{ fontSize: "0.9375rem", color: "var(--color-text-primary)" }}>6 tháng</p>
                 </div>
                 <div>
-                  <p style={{ fontSize: "0.75rem", color: "var(--color-muted)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.375rem" }}>UV</p>
+                  <p style={{ fontSize: "0.75rem", color: "var(--color-muted)", letterSpacing: "0.1em", marginBottom: "0.375rem" }}>UV</p>
                   <p style={{ fontSize: "0.9375rem", color: "var(--color-text-primary)" }}>UV400</p>
                 </div>
               </div>
@@ -175,7 +175,7 @@ export default function ProductCard({ product, isFavorite, onToggleFavorite, onA
           </button>
 
           {/* Style badge */}
-          <span style={{ position: "absolute", bottom: "1rem", left: "1rem", padding: "0.375rem 0.875rem", borderRadius: "9999px", fontSize: "0.6875rem", letterSpacing: "0.1em", background: "rgba(0,0,0,0.6)", color: "var(--color-accent)", backdropFilter: "blur(8px)", textTransform: "uppercase" }}>
+          <span style={{ position: "absolute", bottom: "1rem", left: "1rem", padding: "0.375rem 0.875rem", borderRadius: "9999px", fontSize: "0.6875rem", letterSpacing: "0.1em", background: "rgba(0,0,0,0.6)", color: "var(--color-accent)", backdropFilter: "blur(8px)" }}>
             {product.style}
           </span>
         </div>

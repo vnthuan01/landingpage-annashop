@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 
 const banners = [
   {
-    eyebrow: "BỘ SƯU TẬP 2026",
-    title: "Kính mắt mèo ANNA",
+    eyebrow: "Bộ sưu tập 2026",
+    title: "Kính mắt mèo Anna",
     sub: "Thiết kế mắt mèo thanh lịch, giúp tôn lên đường nét khuôn mặt và mang đến vẻ ngoài cá tính, hiện đại — phù hợp với phong cách của phụ nữ Việt Nam.",
   },
   {
@@ -72,11 +72,11 @@ export default function Hero() {
       <div style={{ position: "relative", zIndex: 10, height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "0 1rem", color: "var(--color-text-on-gold)" }}>
         <div key={current} className="animate-fade-in">
           {banner.eyebrow && (
-            <p style={{ fontSize: "0.75rem", letterSpacing: "0.4em", marginBottom: "1rem", textTransform: "uppercase", fontWeight: 300, color: "var(--color-text-on-gold)", opacity: 0.8 }}>
+            <p style={{ fontSize: "0.875rem", letterSpacing: "0.1em", marginBottom: "1rem", fontWeight: 400, color: "var(--color-text-on-gold)", opacity: 0.8 }}>
               {banner.eyebrow}
             </p>
           )}
-          <h1 className="font-display italic text-4xl md:text-6xl lg:text-7xl mb-4 leading-tight" style={{ color: "var(--color-text-on-gold)", textShadow: "0 2px 10px rgba(0,0,0,0.3)" }}>
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl mb-4 leading-tight" style={{ color: "var(--color-text-on-gold)", textShadow: "0 2px 10px rgba(0,0,0,0.3)" }}>
             {banner.title}
           </h1>
           <p style={{ fontSize: "1.125rem", fontWeight: 300, maxWidth: "36rem", margin: "0 auto", lineHeight: 1.8, color: "var(--color-text-on-gold)", opacity: 0.9, textShadow: "0 2px 10px rgba(0,0,0,0.3)" }}>
@@ -107,14 +107,14 @@ export default function Hero() {
         </div>
 
         {/* Banner dots */}
-        <div className="absolute bottom-50 flex gap-2">
+        <div className="absolute bottom-28 flex gap-2">
           {banners.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
               className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${i === current
                 ? "w-6 accent-gradient"
-                : "bg-stroke hover:bg-muted"
+                : "bg-stroke/40 hover:bg-muted"
                 }`}
               aria-label={`Banner ${i + 1}`}
             />
@@ -124,7 +124,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-        <span className="text-[10px] tracking-[0.3em] text-muted uppercase">
+        <span className="text-[11px] tracking-[0.1em] text-muted">
           Cuộn xuống
         </span>
         <div className="w-[1px] h-8 bg-stroke overflow-hidden">

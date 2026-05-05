@@ -53,10 +53,10 @@ export default function GallerySection() {
       <div className="container-main">
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-          <p style={{ fontSize: "0.875rem", letterSpacing: "0.4em", color: "var(--color-text-on-gold)", opacity: 0.8, marginBottom: "1.25rem", textTransform: "uppercase", fontWeight: 300 }}>
-            KHÁM PHÁ
+          <p style={{ fontSize: "0.875rem", letterSpacing: "0.1em", color: "var(--color-text-on-gold)", opacity: 0.8, marginBottom: "1.25rem", fontWeight: 400 }}>
+            Sản phẩm thực tế
           </p>
-          <h2 className="font-display" style={{ fontStyle: "italic", fontSize: "clamp(2rem, 5vw, 3.75rem)", color: "var(--color-text-on-gold)", marginBottom: "1.5rem", textShadow: "0 2px 10px rgba(0,0,0,0.1)" }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.75rem)", color: "var(--color-text-on-gold)", marginBottom: "1.5rem", textShadow: "0 2px 10px rgba(0,0,0,0.1)" }}>
             Lookbook
           </h2>
           <div className="accent-gradient" style={{ width: "6rem", height: "1px", margin: "0 auto" }} />

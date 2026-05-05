@@ -22,7 +22,6 @@ export default function ContactPage() {
     color: "var(--color-muted)",
     marginBottom: "0.75rem",
     letterSpacing: "0.1em",
-    textTransform: "uppercase",
   };
 
   return (
@@ -44,10 +43,10 @@ export default function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <p style={{ fontSize: "0.75rem", letterSpacing: "0.4em", color: "var(--color-accent)", marginBottom: "1rem", textTransform: "uppercase", fontWeight: 300 }}>
-            KẾT NỐI VỚI CHÚNG TÔI
+          <p style={{ fontSize: "0.875rem", letterSpacing: "0.1em", color: "var(--color-accent)", marginBottom: "1rem", fontWeight: 400 }}>
+            Kết nối với chúng tôi
           </p>
-          <h1 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.75rem)", fontStyle: "italic", color: "var(--color-text-primary)", marginBottom: "1rem" }}>
+          <h1 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.75rem)", color: "var(--color-text-primary)", marginBottom: "1rem" }}>
             Liên hệ Anna Eyewear
           </h1>
           <p style={{ fontSize: "1rem", color: "var(--color-muted)", maxWidth: "32rem", margin: "0 auto", lineHeight: 1.8, fontWeight: 300 }}>
