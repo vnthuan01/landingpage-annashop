@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
 import type { Product } from "../data/products";
 import { formatPrice } from "../data/products";
+import { flyToTarget } from "../utils/animations";
 
 interface ProductCardProps {
   product: Product;
@@ -50,9 +51,9 @@ function ProductDetailModal({ product, onClose, onAddToCart, isFavorite, onToggl
                     padding: "0.5rem 1rem",
                     borderRadius: "9999px",
                     fontSize: "0.8125rem",
-                    border: `1px solid ${i === activeView ? "var(--color-accent-blue)" : "var(--color-stroke)"}`,
-                    background: i === activeView ? "rgba(137,170,204,0.1)" : "transparent",
-                    color: i === activeView ? "var(--color-accent-blue)" : "var(--color-muted)",
+                    border: `1px solid ${i === activeView ? "var(--color-accent)" : "var(--color-stroke)"}`,
+                    background: i === activeView ? "rgba(205,155,81,0.1)" : "transparent",
+                    color: i === activeView ? "var(--color-accent)" : "var(--color-muted)",
                     cursor: "pointer",
                     transition: "all 0.3s",
                   }}
@@ -73,7 +74,7 @@ function ProductDetailModal({ product, onClose, onAddToCart, isFavorite, onToggl
 
             <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: "1.5rem" }}>
               <div>
-                <p style={{ fontSize: "0.8125rem", letterSpacing: "0.2em", color: "var(--color-accent-blue)", textTransform: "uppercase", marginBottom: "0.75rem" }}>{product.style}</p>
+                <p style={{ fontSize: "0.8125rem", letterSpacing: "0.2em", color: "var(--color-accent)", textTransform: "uppercase", marginBottom: "0.75rem" }}>{product.style}</p>
                 <h2 className="font-display" style={{ fontSize: "2rem", fontStyle: "italic", color: "var(--color-text-primary)" }}>{product.name}</h2>
               </div>
 
@@ -131,9 +132,11 @@ export default function ProductCard({ product, isFavorite, onToggleFavorite, onA
   return (
     <>
       <motion.div
-        style={{ background: "var(--color-surface)", border: "1px solid var(--color-stroke)", borderRadius: "1rem", overflow: "hidden", cursor: "pointer", transition: "border-color 0.5s" }}
+        className="card-hover-effect group"
+        style={{ background: "var(--color-surface)", border: "1px solid var(--color-stroke)", borderRadius: "1rem", overflow: "hidden", cursor: "pointer", transition: "all 0.3s ease", boxShadow: "0 10px 30px rgba(0,0,0,0.05)" }}
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
+        whileHover={{ y: -6, boxShadow: "0 15px 40px rgba(0,0,0,0.1)", borderColor: "var(--color-accent)" }}
         transition={{ duration: 0.5, delay: index * 0.05 }}
         viewport={{ once: true }}
         onClick={() => setShowDetail(true)}
@@ -151,7 +154,11 @@ export default function ProductCard({ product, isFavorite, onToggleFavorite, onA
 
           {/* Favorite button */}
           <button
-            onClick={(e) => { e.stopPropagation(); onToggleFavorite(product); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleFavorite(product);
+              if (!isFavorite) flyToTarget(e.clientX, e.clientY, '#nav-favorite-icon', product.image);
+            }}
             style={{
               position: "absolute", top: "1rem", right: "1rem",
               width: "2.75rem", height: "2.75rem", borderRadius: "50%",
@@ -168,7 +175,7 @@ export default function ProductCard({ product, isFavorite, onToggleFavorite, onA
           </button>
 
           {/* Style badge */}
-          <span style={{ position: "absolute", bottom: "1rem", left: "1rem", padding: "0.375rem 0.875rem", borderRadius: "9999px", fontSize: "0.6875rem", letterSpacing: "0.1em", background: "rgba(0,0,0,0.6)", color: "var(--color-accent-blue)", backdropFilter: "blur(8px)", textTransform: "uppercase" }}>
+          <span style={{ position: "absolute", bottom: "1rem", left: "1rem", padding: "0.375rem 0.875rem", borderRadius: "9999px", fontSize: "0.6875rem", letterSpacing: "0.1em", background: "rgba(0,0,0,0.6)", color: "var(--color-accent)", backdropFilter: "blur(8px)", textTransform: "uppercase" }}>
             {product.style}
           </span>
         </div>
@@ -186,7 +193,11 @@ export default function ProductCard({ product, isFavorite, onToggleFavorite, onA
               {formatPrice(product.price)}
             </p>
             <button
-              onClick={(e) => { e.stopPropagation(); onAddToCart(product); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                onAddToCart(product);
+                flyToTarget(e.clientX, e.clientY, '#nav-cart-icon', product.image);
+              }}
               className="accent-gradient"
               style={{ padding: "0.5rem 1.25rem", borderRadius: "9999px", fontSize: "0.8125rem", color: "var(--color-bg)", border: "none", cursor: "pointer", fontWeight: 500, transition: "opacity 0.3s" }}
             >

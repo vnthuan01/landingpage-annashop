@@ -4,17 +4,17 @@ const banners = [
   {
     eyebrow: "BỘ SƯU TẬP 2026",
     title: "Kính mắt mèo ANNA",
-    sub: "Tôn vinh nét đẹp cá tính",
+    sub: "Thiết kế mắt mèo thanh lịch, giúp tôn lên đường nét khuôn mặt và mang đến vẻ ngoài cá tính, hiện đại — phù hợp với phong cách của phụ nữ Việt Nam.",
   },
   {
     eyebrow: "",
     title: "Một thiết kế – Nhiều phong cách",
-    sub: "Phù hợp mọi khuôn mặt",
+    sub: "Dễ dàng kết hợp từ trang phục thường ngày đến những dịp đặc biệt, phù hợp với nhiều dáng khuôn mặt và phong cách sống năng động của giới trẻ.",
   },
   {
     eyebrow: "",
     title: "Đơn giản nhưng đẳng cấp",
-    sub: "Tinh tế trong từng chi tiết",
+    sub: "Tối giản trong thiết kế nhưng tinh tế trong từng chi tiết, từ chất liệu đến hoàn thiện — mang lại cảm giác thoải mái và sang trọng khi sử dụng mỗi ngày.",
   },
 ];
 
@@ -62,60 +62,43 @@ export default function Hero() {
           <source src="/videohsl.mp4" type="video/mp4" />
         </video>
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0" style={{ background: "rgba(205, 155, 81, 0.2)" }} />
+        <div className="absolute inset-0 bg-black/30" />
         {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-bg to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[var(--color-bg)] to-transparent" />
       </div>
 
       {/* Content */}
-      <div style={{ position: "relative", zIndex: 10, height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "0 1rem" }}>
+      <div style={{ position: "relative", zIndex: 10, height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "0 1rem", color: "var(--color-text-on-gold)" }}>
         <div key={current} className="animate-fade-in">
           {banner.eyebrow && (
-            <p style={{ fontSize: "0.75rem", letterSpacing: "0.4em", marginBottom: "1rem", textTransform: "uppercase", fontWeight: 300 }}>
+            <p style={{ fontSize: "0.75rem", letterSpacing: "0.4em", marginBottom: "1rem", textTransform: "uppercase", fontWeight: 300, color: "var(--color-text-on-gold)", opacity: 0.8 }}>
               {banner.eyebrow}
             </p>
           )}
-          <h1 className="font-display italic text-4xl md:text-6xl lg:text-7xl text-text-primary mb-4 leading-tight">
+          <h1 className="font-display italic text-4xl md:text-6xl lg:text-7xl mb-4 leading-tight" style={{ color: "var(--color-text-on-gold)", textShadow: "0 2px 10px rgba(0,0,0,0.3)" }}>
             {banner.title}
           </h1>
-          <p className="text-muted text-base md:text-lg font-light max-w-md mx-auto">
+          <p style={{ fontSize: "1.125rem", fontWeight: 300, maxWidth: "36rem", margin: "0 auto", lineHeight: 1.8, color: "var(--color-text-on-gold)", opacity: 0.9, textShadow: "0 2px 10px rgba(0,0,0,0.3)" }}>
             {banner.sub}
           </p>
         </div>
 
         {/* CTA Buttons */}
         <div style={{ display: "flex", gap: "1rem", marginTop: "2.5rem" }}>
-          <button onClick={scrollToProducts} className="btn-primary">
+          <button onClick={scrollToProducts} className="btn-primary" style={{ background: "linear-gradient(135deg, #E6C48A 0%, #CD9B51 100%)", color: "#2B2114", border: "none" }}>
             <div className="text-center flex items-center gap-2">
               Xem sản phẩm
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 5v14" />
                 <path d="M19 12l-7 7-7-7" />
               </svg>
             </div>
           </button>
-          <button onClick={scrollToContact} className="btn-outline">
+          <button onClick={scrollToContact} className="btn-outline" style={{ borderColor: "#FFFFFF", color: "#FFFFFF" }}>
             <div className="text-center flex items-center gap-2">
               Liên hệ ngay
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M7 17L17 7" />
                 <path d="M7 7h10v10" />
               </svg>

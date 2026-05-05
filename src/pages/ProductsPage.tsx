@@ -34,7 +34,7 @@ export default function ProductsPage({
           transition={{ duration: 0.6 }}
           style={{ marginBottom: "2rem", textAlign: "center", gap: "1rem", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}
         >
-          <p className="text-xs tracking-[0.4em] text-accent-blue uppercase font-light">
+          <p style={{ fontSize: "0.75rem", letterSpacing: "0.4em", color: "var(--color-accent)", textTransform: "uppercase", fontWeight: 300 }}>
             BỘ SƯU TẬP 2026
           </p>
           <h1 className="font-display italic text-4xl md:text-6xl text-text-primary">
@@ -43,7 +43,7 @@ export default function ProductsPage({
           <p className="text-muted text-base md:text-lg font-light mx-auto leading-relaxed">
             Một dòng sản phẩm duy nhất — 10 thiết kế độc đáo dành cho phong cách riêng của bạn
           </p>
-          <div className="w-20h-[1px] accent-gradient mx-auto mt-6" />
+          <div className="accent-gradient" style={{ width: "5rem", height: "1px", margin: "1.5rem auto 0" }} />
         </motion.div>
 
         {/* Description */}

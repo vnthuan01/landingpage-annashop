@@ -49,14 +49,14 @@ export default function GallerySection() {
   }, []);
 
   return (
-    <section id="gallery" ref={sectionRef} className="section-spacing" style={{ backgroundColor: "var(--color-surface)", marginTop: "1rem" }}>
+    <section id="gallery" ref={sectionRef} className="section-spacing" style={{ backgroundColor: "var(--color-bg-gold)", marginTop: "1rem" }}>
       <div className="container-main">
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-          <p style={{ fontSize: "0.875rem", letterSpacing: "0.4em", color: "var(--color-accent-blue)", marginBottom: "1.25rem", textTransform: "uppercase", fontWeight: 300 }}>
+          <p style={{ fontSize: "0.875rem", letterSpacing: "0.4em", color: "var(--color-text-on-gold)", opacity: 0.8, marginBottom: "1.25rem", textTransform: "uppercase", fontWeight: 300 }}>
             KHÁM PHÁ
           </p>
-          <h2 className="font-display" style={{ fontStyle: "italic", fontSize: "clamp(2rem, 5vw, 3.75rem)", color: "var(--color-text-primary)", marginBottom: "1.5rem" }}>
+          <h2 className="font-display" style={{ fontStyle: "italic", fontSize: "clamp(2rem, 5vw, 3.75rem)", color: "var(--color-text-on-gold)", marginBottom: "1.5rem", textShadow: "0 2px 10px rgba(0,0,0,0.1)" }}>
             Lookbook
           </h2>
           <div className="accent-gradient" style={{ width: "6rem", height: "1px", margin: "0 auto" }} />
@@ -67,8 +67,8 @@ export default function GallerySection() {
           {images.map((img) => (
             <div
               key={img.id}
-              className={`gallery-item ${img.span}`}
-              style={{ position: "relative", borderRadius: "1rem", overflow: "hidden", cursor: "pointer" }}
+              className={`gallery-item group ${img.span}`}
+              style={{ position: "relative", borderRadius: "1rem", overflow: "hidden", cursor: "pointer", boxShadow: "0 10px 30px rgba(0,0,0,0.05)" }}
             >
               <img
                 src={img.src}
@@ -76,9 +76,9 @@ export default function GallerySection() {
                 style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.7s" }}
                 loading="lazy"
               />
-              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.4), transparent)", opacity: 0, transition: "opacity 0.5s" }} className="group-hover:opacity-100" />
-              <div style={{ position: "absolute", bottom: "1.5rem", left: "1.5rem" }}>
-                <p style={{ fontSize: "0.875rem", color: "var(--color-text-primary)", letterSpacing: "0.05em" }}>
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.6), transparent)", transition: "opacity 0.5s" }} className="opacity-0 group-hover:opacity-100" />
+              <div style={{ position: "absolute", bottom: "1.5rem", left: "1.5rem", transition: "opacity 0.5s", zIndex: 10 }} className="opacity-0 group-hover:opacity-100">
+                <p style={{ fontSize: "0.875rem", color: "#FFFFFF", letterSpacing: "0.05em" }}>
                   {img.alt}
                 </p>
               </div>

@@ -46,8 +46,8 @@ export default function FavoriteDrawer({ isOpen, onClose, favorites, onToggleFav
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <h3 style={{ fontSize: "1.0625rem", color: "var(--color-text-primary)", fontWeight: 500 }}>{product.name}</h3>
                     <p className="accent-gradient-text" style={{ fontSize: "1rem", fontWeight: 600, marginTop: "0.25rem" }}>{formatPrice(product.price)}</p>
-                    <button onClick={() => onAddToCart(product)} style={{ marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--color-accent-blue)", background: "none", border: "none", cursor: "pointer", letterSpacing: "0.05em", padding: "0.375rem 0" }}>
-                      + Thêm vào giỏ
+                    <button onClick={() => onAddToCart(product)} style={{ marginTop: "0.75rem", fontSize: "0.875rem", color: "var(--color-accent)", background: "none", border: "none", cursor: "pointer", letterSpacing: "0.05em", padding: "0.375rem 0" }}>
+                      THÊM VÀO GIỎ
                     </button>
                   </div>
                   <button onClick={() => onToggleFavorite(product)} style={{ alignSelf: "flex-start", padding: "0.5rem", background: "none", border: "none", color: "#f87171", cursor: "pointer", borderRadius: "50%", transition: "color 0.3s" }}>

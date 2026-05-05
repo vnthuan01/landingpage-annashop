@@ -56,7 +56,7 @@ export default function LuxurySection() {
     <section ref={sectionRef} className="section-spacing" style={{ backgroundColor: "var(--color-bg)", marginTop: "1rem" }}>
       <div className="container-main">
         <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-          <p style={{ fontSize: "0.8125rem", letterSpacing: "0.4em", color: "var(--color-accent-blue)", marginBottom: "1.25rem", textTransform: "uppercase", fontWeight: 300 }}>
+          <p style={{ fontSize: "0.8125rem", letterSpacing: "0.4em", color: "var(--color-accent)", marginBottom: "1.25rem", textTransform: "uppercase", fontWeight: 300 }}>
             GIÁ TRỊ CỐT LÕI
           </p>
           <h2 className="font-display" style={{ fontStyle: "italic", fontSize: "clamp(1.75rem, 4vw, 3rem)", color: "var(--color-text-primary)", maxWidth: "700px", margin: "0 auto", lineHeight: 1.3 }}>

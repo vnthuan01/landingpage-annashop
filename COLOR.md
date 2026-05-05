@@ -1,91 +1,88 @@
-🎨 1. CORE PALETTE (chuẩn cho ANNA)
-🌟 Primary (nền chính)
---bg: #F5F5DC;          /* Beige */
---surface: #F1E9D2;     /* Parchment nhẹ */
+🎨 ✨ THEME HOÀN CHỈNH (dựa trên #CD9B51)
+🌟 Background System
+--bg-main: #CD9B51;     /* nền chính (section highlight) */
+--bg-soft: #F6F1E7;     /* nền phụ (để nghỉ mắt) */
+--surface: #FFF9F0;     /* card nền sáng */
 
-👉 Dùng cho:
+👉 Không dùng 1 màu cho toàn page
+👉 Phải alternating sections
 
-Background chính
-Section sáng
-🖋 Text
---text-primary: #2B2B2B;   /* gần đen nhưng mềm */
---text-muted: #7A7468;     /* xám ấm */
+🖋 TEXT (quan trọng nhất)
+--text-primary: #2B2114;   /* nâu đậm (đọc tốt trên bg sáng) */
+--text-on-gold: #FFFFFF;  /* dùng khi text nằm trên #CD9B51 */
+--text-muted: #7A6A55;
 
-👉 Đừng dùng đen #000 → quá gắt, mất vibe luxury
+👉 Rule:
 
-🧵 Border / line
---stroke: #E5DBC3;
-✨ 2. ACCENT (QUAN TRỌNG NHẤT)
+Trên #CD9B51 → dùng trắng
+Trên nền sáng → dùng nâu đậm
+🧵 BORDER / DIVIDER
+--stroke: #E8D9C3;
+--stroke-dark: rgba(43,33,20,0.15);
+💎 CARD (rất quan trọng để không bị “ngợp vàng”)
+--card-bg: #FFF9F0;
+--card-border: #E8D9C3;
 
-Bạn đang dùng blue → ❌ sai vibe
+👉 Card luôn phải sáng hơn nền gold
 
-👉 Đổi sang gold / warm brown
+Style:
+background: var(--card-bg);
+border: 1px solid var(--card-border);
+box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+🔥 BUTTON SYSTEM
+Primary (nút chính)
 
-Option đẹp nhất:
---accent: #C6A86E;   /* gold sang */
---accent-soft: #E8D8B5;
-Gradient:
-linear-gradient(135deg, #E8D8B5 0%, #C6A86E 100%)
+👉 đảo ngược màu để nổi trên nền
 
-👉 Dùng cho:
+background: #2B2114;
+color: #FFFFFF;
 
-Button
-Icon
-Hover border
-Progress bar
-🪞 3. SURFACE LEVEL (depth cho UI)
---card: #FAF6EC;     /* card sáng */
---glass: rgba(255,255,255,0.6);
-🔥 4. HOVER & INTERACTION
-Button Primary
-bg: #C6A86E
-text: white
-hover: #B89655
-Button Outline
-border: #C6A86E
-hover:
-  bg: gradient gold
-  text: white
-🧊 5. SHADOW (luxury feel)
-box-shadow: 0 10px 40px rgba(198,168,110,0.2);
+Hover:
 
-👉 Không dùng shadow đen → dùng shadow màu gold
+background: #1F180F;
+Secondary (outline luxury)
+border: 1.5px solid #2B2114;
+color: #2B2114;
+background: transparent;
 
-🧩 6. APPLY VÀO WEB CỦA BẠN
-Navbar
-background: rgba(245,245,220,0.7);
-border: 1px solid #E5DBC3;
-backdrop-filter: blur(20px);
-Product Card
-bg: #FAF6EC;
-hover:
-  transform: translateY(-6px)
-  shadow: gold
-Icon
+Hover:
 
-👉 đổi từ xanh → gold:
+background: #2B2114;
+color: white;
+Accent Button (premium)
+background: linear-gradient(135deg, #E6C48A 0%, #CD9B51 100%);
+color: #2B2114;
+🧊 INPUT / FORM
+background: #FFF9F0;
+border: 1px solid #E8D9C3;
+color: #2B2114;
 
-bg-gradient-to-br from-[#E8D8B5] to-[#C6A86E]
-text: white
-Section alternating (quan trọng)
-section 1: #F5F5DC
-section 2: #F1E9D2
-section 3: #F5F5DC
+Focus:
 
-👉 tạo depth rất nhẹ → nhìn cao cấp hơn nhiều
+border: 1px solid #CD9B51;
+box-shadow: 0 0 0 3px rgba(205,155,81,0.15);
+✨ ICON / BADGE
+background: linear-gradient(135deg, #E6C48A, #CD9B51);
+color: #2B2114;
+🌗 SECTION COMPOSITION (QUAN TRỌNG)
 
-🚨 7. TRÁNH NHỮNG THỨ NÀY
+👉 Đừng làm full vàng
 
-❌ xanh dương (#4E85BF) → phá luxury
-❌ đen đậm (#000) → quá harsh
-❌ gradient quá gắt
-❌ shadow đen
-❌ trắng tinh (#fff) → dùng off-white thôi
+Hero → #CD9B51
+Section 2 → #F6F1E7
+Section 3 → #FFF9F0
+Section 4 → #CD9B51 (nhẹ hoặc overlay)
+🚨 LỖI PHỔ BIẾN (tránh)
 
-💎 8. STYLE FINAL (đúng vibe bạn đang build)
+❌ text nâu trên nền gold → khó đọc
+❌ card cũng màu vàng → mất layer
+❌ button cùng màu nền → không nổi
+❌ quá nhiều gradient → nhìn rẻ
 
-👉 Đây là vibe của bạn:
+💎 RESULT STYLE
 
-Gentle Monster × Zara × Dior nhẹ
-Minimal luxury
-Clean + warm
+Theme này sẽ ra vibe:
+
+Zara Home
+Gentle Monster (warm version)
+Luxury minimal Việt Nam

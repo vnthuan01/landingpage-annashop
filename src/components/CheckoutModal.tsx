@@ -31,18 +31,6 @@ export default function CheckoutModal({ isOpen, onClose, cart, totalPrice, onSub
     setForm((prev) => ({ ...prev, [field]: value }));
   };
 
-  const inputStyle: React.CSSProperties = {
-    width: "100%",
-    padding: "1rem 1.5rem",
-    backgroundColor: "var(--color-surface)",
-    border: "1px solid var(--color-stroke)",
-    borderRadius: "0.75rem",
-    fontSize: "1rem",
-    color: "var(--color-text-primary)",
-    outline: "none",
-    transition: "border-color 0.3s",
-  };
-
   const labelStyle: React.CSSProperties = {
     display: "block",
     fontSize: "0.8125rem",
@@ -80,19 +68,19 @@ export default function CheckoutModal({ isOpen, onClose, cart, totalPrice, onSub
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", marginBottom: "2rem" }}>
                   <div>
                     <label style={labelStyle}>Họ và tên *</label>
-                    <input type="text" required value={form.name} onChange={(e) => updateField("name", e.target.value)} style={inputStyle} placeholder="Nhập họ và tên" />
+                    <input type="text" required value={form.name} onChange={(e) => updateField("name", e.target.value)} className="input-base" placeholder="Nhập họ và tên" />
                   </div>
                   <div>
                     <label style={labelStyle}>Số điện thoại *</label>
-                    <input type="tel" required value={form.phone} onChange={(e) => updateField("phone", e.target.value)} style={inputStyle} placeholder="Nhập số điện thoại" />
+                    <input type="tel" required value={form.phone} onChange={(e) => updateField("phone", e.target.value)} className="input-base" placeholder="Nhập số điện thoại" />
                   </div>
                   <div>
                     <label style={labelStyle}>Địa chỉ *</label>
-                    <input type="text" required value={form.address} onChange={(e) => updateField("address", e.target.value)} style={inputStyle} placeholder="Nhập địa chỉ giao hàng" />
+                    <input type="text" required value={form.address} onChange={(e) => updateField("address", e.target.value)} className="input-base" placeholder="Nhập địa chỉ giao hàng" />
                   </div>
                   <div>
                     <label style={labelStyle}>Ghi chú</label>
-                    <textarea value={form.note} onChange={(e) => updateField("note", e.target.value)} rows={3} style={{ ...inputStyle, resize: "none" }} placeholder="Ghi chú thêm (không bắt buộc)" />
+                    <textarea value={form.note} onChange={(e) => updateField("note", e.target.value)} rows={3} className="input-base" style={{ resize: "none" }} placeholder="Ghi chú thêm (không bắt buộc)" />
                   </div>
                 </div>
 

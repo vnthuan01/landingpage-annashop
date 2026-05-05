@@ -6,10 +6,10 @@ export default function PickSection() {
   const featured = products.slice(0, 3);
 
   return (
-    <section className="section-spacing" style={{ backgroundColor: "var(--color-surface)", marginTop: "1rem" }}>
+    <section className="section-spacing" style={{ backgroundColor: "var(--color-bg)", marginTop: "1rem" }}>
       <div className="container-main">
         <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-          <p style={{ fontSize: "0.8125rem", letterSpacing: "0.4em", color: "var(--color-accent-blue)", marginBottom: "1.25rem", textTransform: "uppercase", fontWeight: 300 }}>
+          <p style={{ fontSize: "0.8125rem", letterSpacing: "0.4em", color: "var(--color-accent)", marginBottom: "1.25rem", textTransform: "uppercase", fontWeight: 300 }}>
             BỘ SƯU TẬP
           </p>
           <h2 className="font-display" style={{ fontStyle: "italic", fontSize: "clamp(1.75rem, 4vw, 3rem)", color: "var(--color-text-primary)", maxWidth: "700px", margin: "0 auto", lineHeight: 1.3 }}>
@@ -21,20 +21,20 @@ export default function PickSection() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", gap: "2.5rem" }}>
           {featured.map((product) => (
             <Link to="/san-pham" key={product.id} style={{ textDecoration: "none", color: "inherit" }}>
-              <div style={{
+              <div className="card-base" style={{
                 borderRadius: "1.5rem",
                 overflow: "hidden",
                 border: "1px solid var(--color-stroke)",
-                background: "var(--color-bg)",
-                transition: "all 0.5s",
+                background: "var(--color-surface)",
+                transition: "all 0.3s ease",
                 cursor: "pointer",
               }}>
                 <div style={{ aspectRatio: "4/3", overflow: "hidden", position: "relative" }}>
                   <img src={product.image} alt={product.name} style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.7s" }} loading="lazy" />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.6), transparent)", display: "flex", alignItems: "flex-end", padding: "2rem" }}>
                     <div>
-                      <span style={{ fontSize: "0.6875rem", letterSpacing: "0.15em", color: "var(--color-accent-blue)", textTransform: "uppercase", display: "block", marginBottom: "0.375rem" }}>{product.style}</span>
-                      <h3 className="font-display" style={{ fontSize: "1.5rem", fontStyle: "italic", color: "var(--color-text-primary)" }}>{product.name}</h3>
+                      <span style={{ fontSize: "0.6875rem", letterSpacing: "0.15em", color: "var(--color-accent)", textTransform: "uppercase", display: "block", marginBottom: "0.375rem" }}>{product.style}</span>
+                      <h3 className="font-display" style={{ fontSize: "1.5rem", fontStyle: "italic", color: "#FFFFFF" }}>{product.name}</h3>
                     </div>
                   </div>
                 </div>
@@ -43,7 +43,7 @@ export default function PickSection() {
                     <p style={{ fontSize: "0.875rem", color: "var(--color-muted)", fontWeight: 300, marginBottom: "0.25rem" }}>{product.material}</p>
                     <p className="accent-gradient-text" style={{ fontSize: "1.25rem", fontWeight: 600 }}>{formatPrice(product.price)}</p>
                   </div>
-                  <span style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem", color: "var(--color-accent-blue)", letterSpacing: "0.05em" }}>
+                  <span style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem", color: "var(--color-accent)", letterSpacing: "0.05em" }}>
                     Khám phá
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M5 12h14M12 5l7 7-7 7" />

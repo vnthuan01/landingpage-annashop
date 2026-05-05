@@ -39,11 +39,11 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="section-spacing" style={{ backgroundColor: "var(--color-bg)", marginTop: "1rem" }}>
+    <section id="about" ref={sectionRef} className="section-spacing" style={{ backgroundColor: "var(--color-bg-alt)", marginTop: "1rem" }}>
       <div className="container-main">
         {/* Header */}
         <div className="text-center about-animate" style={{ marginBottom: "5rem" }}>
-          <p style={{ fontSize: "0.875rem", letterSpacing: "0.4em", color: "var(--color-accent-blue)", marginBottom: "1.25rem", textTransform: "uppercase", fontWeight: 300 }}>
+          <p style={{ fontSize: "0.875rem", letterSpacing: "0.4em", color: "var(--color-accent)", marginBottom: "1.25rem", textTransform: "uppercase", fontWeight: 300 }}>
             VỀ ANNA
           </p>
           <h2 className="font-display" style={{ fontStyle: "italic", fontSize: "clamp(2rem, 5vw, 3.75rem)", color: "var(--color-text-primary)", marginBottom: "1.5rem" }}>
