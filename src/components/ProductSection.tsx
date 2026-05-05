@@ -72,7 +72,7 @@ export default function ProductSection({
       {/* Horizontal scrolling track */}
       <div
         ref={trackRef}
-        style={{ display: "flex", alignItems: "center", gap: "3rem", height: "100%", paddingTop: "12rem", paddingBottom: "6rem", paddingLeft: "5rem", paddingRight: "5rem", width: "fit-content" }}
+        style={{ display: "flex", alignItems: "center", gap: "3rem", height: "100%", paddingTop: "16rem", paddingBottom: "6rem", paddingLeft: "5rem", paddingRight: "5rem", width: "fit-content" }}
       >
         <div style={{ flexShrink: 0, width: "2rem" }} />
 

@@ -4,6 +4,8 @@ import LoadingScreen from "./components/LoadingScreen";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ProductSection from "./components/ProductSection";
+import LuxurySection from "./components/LuxurySection";
+import PickSection from "./components/PickSection";
 import AboutSection from "./components/AboutSection";
 import GallerySection from "./components/GallerySection";
 import StatsSection from "./components/StatsSection";
@@ -43,6 +45,8 @@ function HomePage({
         onToggleFavorite={toggleFavorite}
         onAddToCart={addToCart}
       />
+      <LuxurySection />
+      <PickSection />
       <AboutSection />
       <GallerySection />
       <StatsSection />
