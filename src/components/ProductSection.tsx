@@ -56,15 +56,18 @@ export default function ProductSection({
       style={{ backgroundColor: "var(--color-bg)" }}
     >
       {/* Header */}
-      <div style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 10, paddingTop: "7rem", paddingBottom: "1rem", background: "linear-gradient(to bottom, var(--color-bg) 0%, var(--color-bg) 60%, transparent 100%)", pointerEvents: "none" }}>
-        <div style={{ padding: "0 2rem", marginBottom: "3.5rem" }}>
-          <p style={{ fontSize: "0.875rem", letterSpacing: "0.1em", color: "var(--color-accent)", marginBottom: "0.75rem", fontWeight: 400 }}>
+      <div style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 10, pointerEvents: "none" }}>
+        <div style={{
+          padding: "4rem 2rem 2.5rem",
+          background: "linear-gradient(to bottom, var(--color-bg) 0%, var(--color-bg) 40%, transparent 100%)"
+        }}>
+          <p style={{ fontSize: "0.8125rem", letterSpacing: "0.1em", color: "var(--color-accent)", marginBottom: "0.5rem", fontWeight: 400 }}>
             Bộ sưu tập mới
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.75rem)", color: "var(--color-text-primary)" }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", color: "var(--color-text-primary)", lineHeight: 1.2 }}>
             Kính mắt mèo Anna
           </h2>
-          <p style={{ color: "var(--color-muted)", fontSize: "1rem", marginTop: "0.75rem", fontWeight: 300 }}>
+          <p style={{ color: "var(--color-muted)", fontSize: "0.875rem", marginTop: "0.5rem", fontWeight: 300 }}>
             Một dòng sản phẩm duy nhất — Trượt để khám phá
           </p>
         </div>
@@ -73,12 +76,22 @@ export default function ProductSection({
       {/* Horizontal scrolling track */}
       <div
         ref={trackRef}
-        style={{ marginTop: "2.5rem", display: "flex", alignItems: "center", gap: "3rem", height: "100%", paddingTop: "16rem", paddingBottom: "6rem", paddingLeft: "5rem", paddingRight: "5rem", width: "fit-content" }}
+        style={{
+          display: "flex",
+          alignItems: "flex-start",
+          gap: "2.5rem",
+          height: "100%",
+          paddingTop: "13rem",
+          paddingBottom: "3rem",
+          paddingLeft: "5rem",
+          paddingRight: "5rem",
+          width: "fit-content"
+        }}
       >
         <div style={{ flexShrink: 0, width: "2rem" }} />
 
         {products.map((product, index) => (
-          <div key={product.id} style={{ flexShrink: 0, width: "340px" }}>
+          <div key={product.id} style={{ flexShrink: 0, width: "300px" }}>
             <ProductCard
               product={product}
               isFavorite={isFavorite(product.id)}
@@ -90,7 +103,7 @@ export default function ProductSection({
         ))}
 
         {/* Trailing spacer */}
-        <div className="flex-shrink-0 w-[320px] h-full flex items-center justify-center">
+        <div className="flex-shrink-0 w-[280px] h-full flex items-center justify-center">
           <div className="text-center">
             <p className="font-display text-3xl text-text-primary mb-4">
               Khám phá thêm
@@ -102,7 +115,7 @@ export default function ProductSection({
       </div>
 
       {/* Scroll progress indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex items-center gap-3">
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 flex items-center gap-3">
         <span className="text-xs tracking-[0.2em] text-muted">
           Cuộn để xem
         </span>

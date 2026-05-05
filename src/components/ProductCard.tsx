@@ -181,7 +181,7 @@ export default function ProductCard({ product, isFavorite, onToggleFavorite, onA
         </div>
 
         {/* Info */}
-        <div style={{ padding: "1.5rem 1.75rem" }}>
+        <div style={{ padding: "1.25rem 1.5rem" }}>
           <h3 style={{ fontSize: "1.0625rem", fontWeight: 500, color: "var(--color-text-primary)", letterSpacing: "0.02em" }}>
             {product.name}
           </h3>
