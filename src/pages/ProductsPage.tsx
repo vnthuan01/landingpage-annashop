@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { products } from "../data/products";
+import { productsContent } from "../data/productsContent";
 import type { Product } from "../data/products";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router-dom";
@@ -35,13 +36,13 @@ export default function ProductsPage({
           style={{ marginBottom: "4rem", textAlign: "center", gap: "1rem", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}
         >
           <p style={{ fontSize: "0.875rem", letterSpacing: "0.1em", color: "var(--color-accent)", fontWeight: 400 }}>
-            Bộ sưu tập 2026
+            {productsContent.eyebrow}
           </p>
           <h1 className="font-display text-4xl md:text-6xl text-text-primary">
-            Kính mắt mèo Anna
+            {productsContent.title}
           </h1>
           <p className="text-muted text-base md:text-lg font-light mx-auto leading-relaxed">
-            Một dòng sản phẩm duy nhất — 10 thiết kế độc đáo dành cho phong cách riêng của bạn
+            {productsContent.description}
           </p>
           <div className="accent-gradient" style={{ width: "5rem", height: "1px", margin: "1.5rem auto 0" }} />
         </motion.div>
@@ -68,57 +69,25 @@ export default function ProductsPage({
             }}
           >
             {/* ITEM */}
-            <div className="flex flex-col items-center text-center max-w-[260px] gap-3">
-              <div className="w-16 h-16 mb-5 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#E8D8B5] to-[#C6A86E] shadow-[0_8px_30px_rgba(198,168,110,0.35)]">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="1.5"
-                >
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
+            {productsContent.features.map((feature, i) => (
+              <div key={i} className="flex flex-col items-center text-center max-w-[260px] gap-3">
+                <div className="w-16 h-16 mb-5 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#E8D8B5] to-[#C6A86E] shadow-[0_8px_30px_rgba(198,168,110,0.35)]">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5">
+                    {feature.isCircle ? (
+                      <><circle cx="12" cy="12" r="10" /><path d="M8 12l3 3 5-6" /></>
+                    ) : (
+                      <path d={feature.icon} />
+                    )}
+                  </svg>
+                </div>
+                <h3 className="text-lg text-text-primary font-medium mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-muted leading-relaxed">
+                  {feature.desc}
+                </p>
               </div>
-              <h3 className="text-lg text-text-primary font-medium mb-2">
-                Thiết kế Cat Eye
-              </h3>
-              <p className="text-sm text-muted leading-relaxed">
-                Kiểu dáng mắt mèo sang trọng, tôn vinh đường nét khuôn mặt.
-              </p>
-            </div>
-
-            {/* ITEM */}
-            <div className="flex flex-col items-center text-center max-w-[260px] gap-3">
-              <div className="w-16 h-16 mb-5 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#E8D8B5] to-[#C6A86E] shadow-[0_8px_30px_rgba(198,168,110,0.35)]">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M8 12l3 3 5-6" />
-                </svg>
-              </div>
-              <h3 className="text-lg text-text-primary font-medium mb-2">
-                Chất lượng cao
-              </h3>
-              <p className="text-sm text-muted leading-relaxed">
-                Chất liệu bền bỉ, tròng kính chống UV, khung nhẹ thoải mái.
-              </p>
-            </div>
-
-            {/* ITEM */}
-            <div className="flex flex-col items-center text-center max-w-[260px] gap-3">
-              <div className="w-16 h-16 mb-5 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#E8D8B5] to-[#C6A86E] shadow-[0_8px_30px_rgba(198,168,110,0.35)]">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                </svg>
-              </div>
-              <h3 className="text-lg text-text-primary font-medium mb-2">
-                Giá hợp lý
-              </h3>
-              <p className="text-sm text-muted leading-relaxed">
-                Từ 450.000đ — phù hợp với phong cách thời trang hiện đại.
-              </p>
-            </div>
+            ))}
           </div>
         </motion.div>
 

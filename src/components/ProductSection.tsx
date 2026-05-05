@@ -2,6 +2,7 @@ import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { products } from "../data/products";
+import { productsContent } from "../data/productsContent";
 import type { Product } from "../data/products";
 import ProductCard from "./ProductCard";
 
@@ -62,13 +63,13 @@ export default function ProductSection({
           background: "linear-gradient(to bottom, var(--color-bg) 0%, var(--color-bg) 40%, transparent 100%)"
         }}>
           <p style={{ fontSize: "0.8125rem", letterSpacing: "0.1em", color: "var(--color-accent)", marginBottom: "0.5rem", fontWeight: 400 }}>
-            Bộ sưu tập mới
+            {productsContent.eyebrow}
           </p>
           <h2 className="font-display" style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", color: "var(--color-text-primary)", lineHeight: 1.2 }}>
-            Kính mắt mèo Anna
+            {productsContent.title}
           </h2>
           <p style={{ color: "var(--color-muted)", fontSize: "0.875rem", marginTop: "0.5rem", fontWeight: 300 }}>
-            Một dòng sản phẩm duy nhất — Trượt để khám phá
+            {productsContent.description}
           </p>
         </div>
       </div>

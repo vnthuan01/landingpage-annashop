@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { navLinks } from "../data/navigation";
 
 interface NavbarProps {
   cartCount: number;
@@ -67,10 +68,11 @@ export default function Navbar({ cartCount, favoriteCount, onCartClick, onFavori
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center" style={{ gap: "0.25rem" }}>
-          <Link to="/" className="nav-link" style={linkStyle(location.pathname === "/")}>Trang chủ</Link>
-          <Link to="/san-pham" className="nav-link" style={linkStyle(location.pathname === "/san-pham")}>Sản phẩm</Link>
-          <Link to="/ve-anna" className="nav-link" style={linkStyle(location.pathname === "/ve-anna")}>Về Anna</Link>
-          <Link to="/lien-he" className="nav-link" style={linkStyle(location.pathname === "/lien-he")}>Liên hệ</Link>
+          {navLinks.map((link) => (
+            <Link key={link.to} to={link.to} className="nav-link" style={linkStyle(location.pathname === link.to)}>
+              {link.label}
+            </Link>
+          ))}
         </div>
 
         {/* Actions */}
@@ -114,11 +116,7 @@ export default function Navbar({ cartCount, favoriteCount, onCartClick, onFavori
       {mobileOpen && (
         <div style={{ position: "fixed", top: "6rem", left: "50%", transform: "translateX(-50%)", zIndex: 99, width: "min(90%, 400px)", padding: "2rem", borderRadius: "1.5rem", background: "rgba(255, 249, 240, 0.95)", backdropFilter: "blur(24px)", border: "1px solid var(--color-stroke)", boxShadow: "0 10px 40px rgba(0,0,0,0.1)" }} className="animate-fade-in">
           <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-            {[
-              { to: "/", label: "Trang chủ" },
-              { to: "/san-pham", label: "Sản phẩm" },
-              { to: "/ve-anna", label: "Về Anna" },
-            ].map((item) => (
+            {navLinks.map((item) => (
               <Link key={item.to} to={item.to} onClick={() => setMobileOpen(false)}
                 style={{ padding: "1rem 1.5rem", fontSize: "1.125rem", color: "var(--color-muted)", borderRadius: "1rem", textDecoration: "none", transition: "all 0.3s" }}
                 className="nav-link"

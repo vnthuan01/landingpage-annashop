@@ -4,11 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const warrantyItems = [
-  { icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z", label: "Bảo hành 6 tháng" },
-  { icon: "M17 1l4 4-4 4M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4M21 13v2a4 4 0 01-4 4H3", label: "Đổi trả 7 ngày nếu lỗi" },
-  { icon: "M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z", label: "Hỗ trợ sửa chữa" },
-];
+import { contactInfo } from "../data/contact";
+const { warranty: warrantyItems } = contactInfo;
 
 export default function ContactSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -59,13 +56,13 @@ export default function ContactSection() {
               Thông tin liên hệ
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-              <a href="mailto:hello@annaeyewear.com" style={{ display: "flex", alignItems: "center", gap: "1.5rem", color: "var(--color-muted)", textDecoration: "none" }}>
+              <a href={`mailto:${contactInfo.email}`} style={{ display: "flex", alignItems: "center", gap: "1.5rem", color: "var(--color-muted)", textDecoration: "none" }}>
                 <div style={iconBoxStyle}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <rect x="2" y="4" width="20" height="16" rx="2" /><path d="M22 7l-10 7L2 7" />
                   </svg>
                 </div>
-                <span style={{ fontSize: "1.125rem" }}>hello@annaeyewear.com</span>
+                <span style={{ fontSize: "1.125rem" }}>{contactInfo.email}</span>
               </a>
               <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", color: "var(--color-muted)" }}>
                 <div style={iconBoxStyle}>
@@ -73,7 +70,7 @@ export default function ContactSection() {
                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.88.36 1.76.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c1.05.34 1.93.57 2.81.7A2 2 0 0122 16.92z" />
                   </svg>
                 </div>
-                <span style={{ fontSize: "1.125rem" }}>0123 456 789</span>
+                <span style={{ fontSize: "1.125rem" }}>{contactInfo.phone}</span>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", color: "var(--color-muted)" }}>
                 <div style={iconBoxStyle}>
@@ -81,7 +78,7 @@ export default function ContactSection() {
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />
                   </svg>
                 </div>
-                <span style={{ fontSize: "1.125rem" }}>TP. Hồ Chí Minh, Việt Nam</span>
+                <span style={{ fontSize: "1.125rem" }}>{contactInfo.address}</span>
               </div>
             </div>
           </div>
@@ -107,7 +104,7 @@ export default function ContactSection() {
                 Không áp dụng bảo hành
               </p>
               <div style={{ display: "flex", gap: "1rem" }}>
-                {["Rơi vỡ", "Va đập"].map((t) => (
+                {contactInfo.nonWarranty.map((t) => (
                   <span key={t} style={{ fontSize: "1rem", color: "rgba(248,113,113,0.8)", backgroundColor: "rgba(248,113,113,0.05)", border: "1px solid rgba(248,113,113,0.1)", padding: "0.75rem 1.5rem", borderRadius: "9999px" }}>
                     {t}
                   </span>

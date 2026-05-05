@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { products } from "../data/products";
-import { formatPrice } from "../data/products";
+import { products, formatPrice } from "../data/products";
+import { pickContent } from "../data/productsContent";
 
 export default function PickSection() {
   const featured = products.slice(0, 3);
@@ -10,10 +10,10 @@ export default function PickSection() {
       <div className="container-main">
         <div style={{ textAlign: "center", marginBottom: "5rem" }}>
           <p style={{ fontSize: "0.875rem", letterSpacing: "0.1em", color: "var(--color-accent)", marginBottom: "1.25rem", fontWeight: 400 }}>
-            Lựa chọn của chuyên gia
+            {pickContent.eyebrow}
           </p>
           <h2 className="font-display" style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", color: "var(--color-text-primary)", maxWidth: "700px", margin: "0 auto", lineHeight: 1.3 }}>
-            Chọn một thiết kế xứng đáng với phong cách của bạn
+            {pickContent.title}
           </h2>
           <div className="accent-gradient" style={{ width: "6rem", height: "1px", margin: "2rem auto 0" }} />
         </div>
@@ -57,7 +57,7 @@ export default function PickSection() {
 
         <div style={{ textAlign: "center", marginTop: "4rem" }}>
           <Link to="/san-pham" className="btn-primary" style={{ padding: "1.125rem 3rem" }}>
-            Xem tất cả sản phẩm →
+            {pickContent.cta}
           </Link>
         </div>
       </div>
