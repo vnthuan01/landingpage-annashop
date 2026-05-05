@@ -115,6 +115,11 @@ export default function AboutPage() {
                 padding: "2.5rem",
                 borderRadius: "1.5rem",
                 transition: "all 0.5s",
+                justifyContent: "center",
+                alignItems: "center",
+                display: "flex",
+                flexDirection: "column",
+                gap: "1rem",
               }}
             >
               <div

@@ -16,6 +16,7 @@ import FavoriteDrawer from "./components/FavoriteDrawer";
 import CheckoutModal from "./components/CheckoutModal";
 import ProductsPage from "./pages/ProductsPage";
 import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
 import { useCart } from "./hooks/useCart";
 import { useFavorites } from "./hooks/useFavorites";
 import type { Product } from "./data/products";
@@ -113,6 +114,7 @@ function AppContent() {
               }
             />
             <Route path="/ve-anna" element={<AboutPage />} />
+            <Route path="/lien-he" element={<ContactPage />} />
           </Routes>
         </main>
 

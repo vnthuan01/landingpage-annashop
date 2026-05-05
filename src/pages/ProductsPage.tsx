@@ -32,12 +32,12 @@ export default function ProductsPage({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          style={{ marginBottom: "2rem", textAlign: "center" }}
+          style={{ marginBottom: "2rem", textAlign: "center", gap: "1rem", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}
         >
-          <p className="text-xs tracking-[0.4em] text-accent-blue mb-6 uppercase font-light">
+          <p className="text-xs tracking-[0.4em] text-accent-blue uppercase font-light">
             BỘ SƯU TẬP 2026
           </p>
-          <h1 className="font-display italic text-4xl md:text-6xl text-text-primary mb-6">
+          <h1 className="font-display italic text-4xl md:text-6xl text-text-primary">
             Kính mắt mèo ANNA
           </h1>
           <p className="text-muted text-base md:text-lg font-light mx-auto leading-relaxed">
@@ -68,7 +68,7 @@ export default function ProductsPage({
             }}
           >
             {/* ITEM */}
-            <div className="flex flex-col items-center text-center max-w-[260px]">
+            <div className="flex flex-col items-center text-center max-w-[260px] gap-3">
               <div className="w-16 h-16 mb-5 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#E8D8B5] to-[#C6A86E] shadow-[0_8px_30px_rgba(198,168,110,0.35)]">
                 <svg
                   width="24"
@@ -90,7 +90,7 @@ export default function ProductsPage({
             </div>
 
             {/* ITEM */}
-            <div className="flex flex-col items-center text-center max-w-[260px]">
+            <div className="flex flex-col items-center text-center max-w-[260px] gap-3">
               <div className="w-16 h-16 mb-5 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#E8D8B5] to-[#C6A86E] shadow-[0_8px_30px_rgba(198,168,110,0.35)]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5">
                   <circle cx="12" cy="12" r="10" />
@@ -106,7 +106,7 @@ export default function ProductsPage({
             </div>
 
             {/* ITEM */}
-            <div className="flex flex-col items-center text-center max-w-[260px]">
+            <div className="flex flex-col items-center text-center max-w-[260px] gap-3">
               <div className="w-16 h-16 mb-5 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#E8D8B5] to-[#C6A86E] shadow-[0_8px_30px_rgba(198,168,110,0.35)]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5">
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />

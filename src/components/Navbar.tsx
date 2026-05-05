@@ -59,28 +59,32 @@ export default function Navbar({ cartCount, favoriteCount, onCartClick, onFavori
     <>
       <nav style={navStyle}>
         {/* Logo */}
-        <Link to="/" className="accent-gradient-text" style={{ fontSize: "1.25rem", letterSpacing: "0.3em", fontWeight: 300, flexShrink: 0 }}>
-          ANNA
-        </Link>
+        <Link to="/" style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
+          <img
+            src="/logo_anna.png"
+            alt="ANNA"
+            style={{
+              height: "2.2rem",
+              transform: "scale(2.8)",
+              transformOrigin: "left center",
+              objectFit: "contain",
+              filter: "invert(1)",
+            }}
+          />        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center" style={{ gap: "0.25rem" }}>
-          {isHome ? (
-            <button onClick={() => scrollTo("#hero")} className="nav-link" style={linkStyle(false)}>Trang chủ</button>
-          ) : (
-            <Link to="/" className="nav-link" style={linkStyle(location.pathname === "/")}>Trang chủ</Link>
-          )}
+          <Link to="/" className="nav-link" style={linkStyle(location.pathname === "/")}>Trang chủ</Link>
           <Link to="/san-pham" className="nav-link" style={linkStyle(location.pathname === "/san-pham")}>Sản phẩm</Link>
           <Link to="/ve-anna" className="nav-link" style={linkStyle(location.pathname === "/ve-anna")}>Về Anna</Link>
-          {isHome ? (
-            <button onClick={() => scrollTo("#contact")} className="nav-link" style={linkStyle(false)}>Liên hệ</button>
-          ) : (
-            <Link to="/" className="nav-link" style={linkStyle(false)}>Liên hệ</Link>
-          )}
+          <Link to="/lien-he" className="nav-link" style={linkStyle(location.pathname === "/lien-he")}>Liên hệ</Link>
         </div>
 
         {/* Actions */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexShrink: 0 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexShrink: 0 }}>
+          <div className="hidden md:block" style={{ marginRight: "0.25rem" }}>
+            <Link to="/san-pham" className="btn-primary" style={{ padding: "0.625rem 1.25rem", fontSize: "0.875rem", textDecoration: "none", borderRadius: "9999px" }}>Khám phá ngay</Link>
+          </div>
           <button onClick={onFavoriteClick} className="relative" style={{ padding: "0.625rem", color: "var(--color-muted)", cursor: "pointer", background: "none", border: "none", transition: "color 0.3s" }} aria-label="Yêu thích">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
