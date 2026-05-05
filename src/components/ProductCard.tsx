@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
 import type { Product } from "../data/products";
 import { formatPrice } from "../data/products";
@@ -26,12 +27,12 @@ function ProductDetailModal({ product, onClose, onAddToCart, isFavorite, onToggl
     { label: "Cận chi tiết", transform: "scale(1.4)" },
   ];
 
-  return (
-    <div className="modal-overlay" onClick={onClose}>
+  const modalContent = (
+    <div className="modal-overlay" onClick={onClose} style={{ zIndex: 9999 }}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "500px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 400px), 1fr))", minHeight: "500px" }}>
           {/* Image gallery */}
-          <div style={{ backgroundColor: "var(--color-bg)", padding: "3rem", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", borderRadius: "1.5rem 0 0 1.5rem", position: "relative" }}>
+          <div style={{ backgroundColor: "var(--color-bg)", padding: "3rem", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative" }}>
             <div style={{ width: "100%", aspectRatio: "1", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
               <img
                 src={product.image}
@@ -40,7 +41,7 @@ function ProductDetailModal({ product, onClose, onAddToCart, isFavorite, onToggl
               />
             </div>
             {/* View selector */}
-            <div style={{ display: "flex", gap: "0.75rem", marginTop: "2rem" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.75rem", marginTop: "2rem" }}>
               {views.map((v, i) => (
                 <button
                   key={i}
@@ -80,7 +81,7 @@ function ProductDetailModal({ product, onClose, onAddToCart, isFavorite, onToggl
 
               <p style={{ fontSize: "1rem", color: "var(--color-muted)", lineHeight: 1.8, fontWeight: 300 }}>{product.description}</p>
 
-              <div style={{ display: "flex", gap: "2rem", padding: "1.25rem 0", borderTop: "1px solid var(--color-stroke)", borderBottom: "1px solid var(--color-stroke)" }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", padding: "1.25rem 0", borderTop: "1px solid var(--color-stroke)", borderBottom: "1px solid var(--color-stroke)" }}>
                 <div>
                   <p style={{ fontSize: "0.75rem", color: "var(--color-muted)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.375rem" }}>Chất liệu</p>
                   <p style={{ fontSize: "0.9375rem", color: "var(--color-text-primary)" }}>{product.material}</p>
@@ -120,6 +121,8 @@ function ProductDetailModal({ product, onClose, onAddToCart, isFavorite, onToggl
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }
 
 export default function ProductCard({ product, isFavorite, onToggleFavorite, onAddToCart, index }: ProductCardProps) {

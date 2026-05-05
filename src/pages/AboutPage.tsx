@@ -10,32 +10,32 @@ const timeline = [
 const values = [
   {
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M8 12l3 3 5-6" />
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.6">
+        <path d="M12 2l2.5 5 5.5.8-4 3.9.9 5.5L12 15l-4.9 2.6.9-5.5-4-3.9 5.5-.8L12 2z" />
       </svg>
     ),
     title: "Sứ mệnh",
-    desc: "Mang đến vẻ đẹp tinh tế, hiện đại cho mọi người với mức giá phải chăng. Mỗi chiếc kính ANNA là một lời khẳng định cá tính riêng.",
+    desc: "Mang đến vẻ đẹp tinh tế, hiện đại cho mọi người với mức giá phải chăng.",
   },
   {
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.6">
+        <circle cx="12" cy="12" r="9" />
         <circle cx="12" cy="12" r="3" />
       </svg>
     ),
     title: "Tầm nhìn",
-    desc: "Trở thành thương hiệu kính thời trang phổ biến và được yêu thích nhất tại Việt Nam, với sản phẩm hiện diện ở mọi tủ đồ của giới trẻ.",
+    desc: "Trở thành thương hiệu kính thời trang phổ biến và được yêu thích nhất tại Việt Nam.",
   },
   {
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.6">
+        <path d="M12 6v6l4 2" />
+        <circle cx="12" cy="12" r="9" />
       </svg>
     ),
     title: "Giá trị cốt lõi",
-    desc: "Thiết kế tối giản · Chất lượng cao · Giá hợp lý · Dịch vụ tận tâm",
+    desc: "Thiết kế tối giản · Chất lượng · Tinh tế · Hiện đại",
   },
 ];
 
@@ -50,10 +50,20 @@ const features = [
 
 export default function AboutPage() {
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "var(--color-bg)", paddingTop: "9rem", paddingBottom: "7rem" }}>
-      <div className="container-main">
+    <div
+      style={{
+        minHeight: "100vh",
+        backgroundColor: "var(--color-bg)",
+        paddingTop: "9rem",
+        paddingBottom: "7rem",
+        fontFamily: "'Inter', sans-serif",
+      }}
+    >
+      {/* FIX: center container */}
+      <div className="container-main max-w-[1200px] mx-auto px-6 lg:px-10">
+
         {/* Breadcrumb */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", fontSize: "1rem", color: "var(--color-muted)", marginBottom: "2.5rem" }}>
+        <div className="flex items-center gap-2 text-sm text-muted mb-12 justify-center md:justify-start">
           <Link to="/" className="hover:text-text-primary transition-colors">
             Trang chủ
           </Link>
@@ -63,109 +73,132 @@ export default function AboutPage() {
 
         {/* Hero */}
         <motion.div
-          className="text-center mb-20"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "2rem",
+            marginBottom: "1rem",
+          }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
         >
-          <p className="text-xs tracking-[0.4em] text-accent-blue mb-4 uppercase font-light">
+          <p className="text-xs tracking-[0.4em] mb-4 uppercase font-light text-[#C6A86E]">
             VỀ ANNA EYEWEAR
           </p>
+
           <h1 className="font-display italic text-4xl md:text-6xl text-text-primary mb-6">
             Câu chuyện thương hiệu
           </h1>
-          <p className="text-muted text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed">
+
+          <p className="text-center text-muted text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed">
             ANNA là thương hiệu kính thời trang được thành lập với triết lý thiết kế tối giản,
             giá cả hợp lý và phù hợp với phong cách của giới trẻ Việt Nam.
-            Mỗi chiếc kính đều được chế tác tỉ mỉ, mang đến vẻ đẹp tinh tế nhưng không kém phần cá tính.
           </p>
-          <div className="w-20 h-[1px] accent-gradient mx-auto mt-8" />
+
+          <div className="w-24 h-[1px] mx-auto mt-8 bg-gradient-to-r from-[#E8D8B5] to-[#C6A86E]" />
         </motion.div>
 
         {/* Values */}
         <motion.div
-          className="grid md:grid-cols-3 gap-8 mb-24"
+          className="grid gap-10 mb-28 justify-center"
+          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 320px))", marginBottom: "2rem" }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
         >
           {values.map((v, i) => (
             <div
               key={i}
-              className="glass rounded-2xl p-10 hover:border-accent-blue/30 transition-all duration-500 group"
+              className="glass group text-center"
+              style={{
+                padding: "2.5rem",
+                borderRadius: "1.5rem",
+                transition: "all 0.5s",
+              }}
             >
-              <div className="w-16 h-16 rounded-2xl accent-gradient flex items-center justify-center mb-7 text-bg group-hover:animate-float">
+              <div
+                className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-6
+                bg-gradient-to-br from-[#E8D8B5] to-[#C6A86E]
+                shadow-[0_8px_30px_rgba(198,168,110,0.3)]"
+              >
                 {v.icon}
               </div>
-              <h3 className="text-lg text-text-primary font-medium mb-3 tracking-wide">
+
+              <h3 className="text-lg text-text-primary font-medium mb-3">
                 {v.title}
               </h3>
-              <p className="text-muted text-sm md:text-base font-light leading-relaxed">
+
+              <p className="text-muted text-sm font-light leading-relaxed">
                 {v.desc}
               </p>
             </div>
           ))}
         </motion.div>
 
-        {/* Brand story section */}
+        {/* Story */}
         <motion.div
-          className="mb-24"
+          style={{ marginBottom: "4rem" }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="grid md:grid-cols-2 gap-14 items-center">
-            <div>
-              <p className="text-xs tracking-[0.4em] text-accent-blue mb-4 uppercase font-light">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: "4rem",
+              alignItems: "center",
+            }}
+          >
+            <div className="max-w-[520px] mx-auto">
+              <p className="text-xs tracking-[0.4em] text-[#C6A86E] mb-4 uppercase">
                 CÂU CHUYỆN CỦA CHÚNG TÔI
               </p>
-              <h2 className="font-display italic text-3xl md:text-4xl text-text-primary mb-6">
+
+              <h2 className="font-display italic text-3xl text-text-primary mb-6">
                 Từ ý tưởng đến hiện thực
               </h2>
-              <p className="text-muted text-base font-light leading-relaxed mb-6">
-                ANNA Eyewear bắt đầu từ một ý tưởng đơn giản: tạo ra những chiếc kính thời trang
-                đẹp mắt mà ai cũng có thể sở hữu. Chúng tôi tin rằng phong cách không nên bị giới hạn
-                bởi giá cả.
+
+              <p className="text-muted leading-relaxed mb-4 font-light">
+                ANNA Eyewear bắt đầu từ một ý tưởng đơn giản: tạo ra những chiếc kính đẹp mà ai cũng có thể sở hữu.
               </p>
-              <p className="text-muted text-base font-light leading-relaxed">
-                Mỗi thiết kế của ANNA đều trải qua quá trình nghiên cứu kỹ lưỡng về xu hướng,
-                chất liệu và sự thoải mái, để đảm bảo bạn không chỉ đẹp mà còn tự tin suốt cả ngày.
+
+              <p className="text-muted leading-relaxed font-light">
+                Mỗi thiết kế đều được nghiên cứu kỹ lưỡng để đảm bảo sự thoải mái và phong cách.
               </p>
             </div>
-            <div className="rounded-2xl overflow-hidden border border-stroke">
+
+            <div className="max-w-[520px] mx-auto rounded-2xl overflow-hidden border border-stroke">
               <img
                 src="/product.png"
-                alt="ANNA Eyewear Story"
-                className="w-full h-80 object-cover"
+                alt=""
+                className="w-full h-[24rem] object-cover"
               />
             </div>
           </div>
         </motion.div>
 
         {/* Timeline */}
-        <motion.div
-          className="mb-24"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <h2 className="font-display italic text-3xl md:text-4xl text-text-primary text-center mb-12">
+        <motion.div className="mb-28">
+          <h2 className="font-display italic text-3xl md:text-4xl text-text-primary text-center mb-14">
             Hành trình phát triển
           </h2>
+
           <div className="max-w-2xl mx-auto">
             {timeline.map((item, i) => (
-              <div key={i} className="flex gap-6 mb-8 last:mb-0">
+              <div key={i} className="flex gap-6 mb-10">
                 <div className="flex flex-col items-center">
-                  <div className="w-4 h-4 rounded-full accent-gradient flex-shrink-0" />
+                  <div className="w-4 h-4 rounded-full bg-gradient-to-r from-[#E8D8B5] to-[#C6A86E]" />
                   {i < timeline.length - 1 && (
                     <div className="w-[1px] flex-1 bg-stroke mt-2" />
                   )}
                 </div>
-                <div className="pb-8">
-                  <span className="text-sm accent-gradient-text font-semibold tracking-wider">
+
+                <div>
+                  <span className="text-sm text-[#C6A86E] font-medium">
                     {item.year}
                   </span>
-                  <p className="text-base text-text-primary mt-1 font-light">
+                  <p className="text-text-primary font-light mt-1">
                     {item.event}
                   </p>
                 </div>
@@ -174,32 +207,35 @@ export default function AboutPage() {
           </div>
         </motion.div>
 
-        {/* Why choose ANNA */}
-        <motion.div
-          className="glass rounded-2xl p-8 md:p-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <h2 className="font-display italic text-3xl md:text-4xl text-text-primary text-center mb-10">
-            Tại sao chọn ANNA?
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {features.map((feature, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-4 p-5 rounded-xl bg-bg border border-stroke hover:border-accent-blue/30 transition-colors"
-              >
-                <div className="w-10 h-10 rounded-xl accent-gradient flex-shrink-0 flex items-center justify-center">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-bg">
-                    <path d="M20 6L9 17l-5-5" />
-                  </svg>
+        {/* Features */}
+        <div className="flex justify-center text-center" style={{ marginTop: "4rem" }}>
+          <motion.div className="flex flex-col items-center justify-center glass rounded-2xl p-10 md:p-14 max-w-[800px] mx-auto" style={{ padding: "1rem" }}>
+            <h2 className="font-display italic text-3xl md:text-4xl text-text-primary text-center" style={{ marginBottom: "1rem" }}>
+              Tại sao chọn ANNA?
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {features.map((feature, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-4 p-5 rounded-xl bg-bg border border-stroke
+                hover:border-[#C6A86E]/40 transition-all cursor-pointer"
+                >
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center
+                  bg-gradient-to-br from-[#E8D8B5] to-[#C6A86E]">
+                    <svg width="14" height="14" viewBox="0 0 24 24" stroke="white" strokeWidth="2" fill="none">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg>
+                  </div>
+
+                  <span className="text-base text-text-primary font-light">
+                    {feature}
+                  </span>
                 </div>
-                <span className="text-base text-text-primary font-light">{feature}</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

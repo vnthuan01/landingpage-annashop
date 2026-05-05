@@ -32,7 +32,7 @@ export default function Hero() {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      video.play().catch(() => {});
+      video.play().catch(() => { });
     }
   }, []);
 
@@ -68,10 +68,10 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
+      <div style={{ position: "relative", zIndex: 10, height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "0 1rem" }}>
         <div key={current} className="animate-fade-in">
           {banner.eyebrow && (
-            <p className="text-xs md:text-sm tracking-[0.4em] text-accent-blue mb-4 font-light uppercase">
+            <p style={{ fontSize: "0.75rem", letterSpacing: "0.4em", marginBottom: "1rem", textTransform: "uppercase", fontWeight: 300 }}>
               {banner.eyebrow}
             </p>
           )}
@@ -84,32 +84,55 @@ export default function Hero() {
         </div>
 
         {/* CTA Buttons */}
-        <div className="mt-10 flex gap-4">
-          <button
-            onClick={scrollToProducts}
-            className="px-8 py-3.5 accent-gradient text-bg text-base tracking-wider rounded-full hover:opacity-90 transition-opacity cursor-pointer font-medium"
-          >
-            Xem sản phẩm
+        <div style={{ display: "flex", gap: "1rem", marginTop: "2.5rem" }}>
+          <button onClick={scrollToProducts} className="btn-primary">
+            <div className="text-center flex items-center gap-2">
+              Xem sản phẩm
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 5v14" />
+                <path d="M19 12l-7 7-7-7" />
+              </svg>
+            </div>
           </button>
-          <button
-            onClick={scrollToContact}
-            className="px-8 py-3.5 border border-stroke text-text-primary text-base tracking-wider rounded-full hover:border-accent-blue transition-colors cursor-pointer"
-          >
-            Liên hệ ngay
+          <button onClick={scrollToContact} className="btn-outline">
+            <div className="text-center flex items-center gap-2">
+              Liên hệ ngay
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M7 17L17 7" />
+                <path d="M7 7h10v10" />
+              </svg>
+            </div>
           </button>
         </div>
 
         {/* Banner dots */}
-        <div className="mt-8 flex gap-2">
+        <div className="absolute bottom-50 flex gap-2">
           {banners.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                i === current
-                  ? "w-6 accent-gradient"
-                  : "bg-stroke hover:bg-muted"
-              }`}
+              className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${i === current
+                ? "w-6 accent-gradient"
+                : "bg-stroke hover:bg-muted"
+                }`}
               aria-label={`Banner ${i + 1}`}
             />
           ))}
